@@ -4,32 +4,32 @@
  *
  * @url http://codex.wordpress.org/Function_Reference/register_taxonomy
  *
- * @name Types
- * @desc This is a taxonomy for Career Types
+ * @name Departments
+ * @desc This is a taxonomy for Career Departments
  * @type Taxonomy, Not Heirarchical (like tags)
- * @var  career_types
- * @slug career-types
+ * @var  rb415_departments
+ * @slug departments
  */
 $labels = array(
-	'name' => __( 'Types' ),
-	'singular_name' => __( 'Type' ),
-	'search_items' => __( 'Search Types' ),
-	'popular_items' => __( 'Popular Types' ),
-	'all_items' => __( 'All Types' ),
+	'name' => __( 'Departments' ),
+	'singular_name' => __( 'Department' ),
+	'search_items' => __( 'Search Departments' ),
+	'popular_items' => __( 'Popular Departments' ),
+	'all_items' => __( 'All Departments' ),
 	'parent_item' => null,
 	'parent_item_colon' => null,
-	'edit_item' => __('Edit Type'),
-	'update_item' => __('Update Type'),
-	'add_new_item' => __('Add New Type'),
-	'new_item_name' => __('New Type'),
-	'menu_name' => __('Types')
+	'edit_item' => __('Edit Department'),
+	'update_item' => __('Update Department'),
+	'add_new_item' => __('Add New Department'),
+	'new_item_name' => __('New Department'),
+	'menu_name' => __('Departments')
 );
 $args = array(
 	'hierarchical' => false,
 	'labels' => $labels,
 	'show_ui' => true,
 	'query_var' => true,
-	'rewrite' => array( 'slug' => 'career-types' )
+	'rewrite' => array( 'slug' => 'departments' )
 );
-register_taxonomy( 'career_types', array('careers'), $args );
+register_taxonomy( 'rb415_departments', array('rb415_careers'), $args );
 

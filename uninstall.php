@@ -10,7 +10,7 @@
 if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) 
     exit();
 
-$option_name = 'red_bridge_careers_settings';
+$option_name = 'rb415_careers_settings';
 
 // For Single site
 if ( !is_multisite() ) {

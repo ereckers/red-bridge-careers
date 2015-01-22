@@ -46,5 +46,5 @@ $args = array(
 	'supports' => array( 'title', 'editor', 'author', 'excerpt', 'page-attributes', 'revisions' ),
 	'taxonomies' => array( '' )
 );
-register_post_type( 'careers', $args );
+register_post_type( 'rb415_careers', $args );
 
