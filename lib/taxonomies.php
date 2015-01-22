@@ -5,7 +5,7 @@
  * @url http://codex.wordpress.org/Function_Reference/register_taxonomy
  *
  * @name Departments
- * @desc This is a taxonomy for Career Departments
+ * @desc Taxonomy associated with Careers post type.
  * @type Taxonomy, Not Heirarchical (like tags)
  * @var  rb415_departments
  * @slug departments

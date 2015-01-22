@@ -5,9 +5,9 @@
  * @url http://codex.wordpress.org/Function_Reference/register_post_type
  *
  * @name Careers
- * @desc Custom post type for Job Descriptions on Careers page.
+ * @desc Primary custom post type for Careers listings.
  * @type Post
- * @var  careers
+ * @var  rb415_careers
  * @slug careers
  * @meta
  */
@@ -42,7 +42,7 @@ $args = array(
 	'hierarchical' => false,
 	'has_archive' => false,
 	'menu_position' => '',
-	'menu_icon' => 'dashicons-portfolio',
+	'menu_icon' => 'dashicons-businessman',
 	'supports' => array( 'title', 'editor', 'author', 'excerpt', 'page-attributes', 'revisions' ),
 	'taxonomies' => array( '' )
 );

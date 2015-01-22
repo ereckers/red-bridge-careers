@@ -38,13 +38,14 @@ class RedBridgeCareersPluginInit {
 	 */
 	function init() {
 
+		self::settings();
+
 		require_once( plugin_dir_path( __FILE__ ) . "/lib/post-type.php" );
 		require_once( plugin_dir_path( __FILE__ ) . "/lib/taxonomies.php" );
 
 		/*
 		add_action( 'wp_enqueue_scripts', array( $this, 'rb415_enqueue_scripts' ) );
 		add_action( 'wp_head', array( $this, 'rb415_insert_script' ) );
-		self::settings();
 		 */
 	}
 
@@ -55,14 +56,14 @@ class RedBridgeCareersPluginInit {
 		// Create array of default settings
 		$this->defaultsettings = array(
 			'plugin_prefix' => 'rb415',
+			'cpt_prefix' => 'rb415',
+			'tax_prefix' => 'rb415',
 			'custom_selector' => 'pre'
 		);
 
 		// Create the settings array by merging the user's settings and the defaults
-		/*
 		$usersettings = (array) get_option('rb415_careers_settings');
 		$this->settings = wp_parse_args( $usersettings, $this->defaultsettings );
-		*/
 	}
 
 	/**
