@@ -6,7 +6,7 @@ Requires at least: 4.0
 Tested up to: 4.1
 Stable tag: 1.0.0
 
-Create and manage a Careers, Jobs, and Join Our Team type pages. List current job openings and positions and click through to a full page job decription.
+Create, manage, and list job openings and positions for your website's careers and jobs sections.
 
 == Description ==
 
@@ -29,11 +29,11 @@ Manual Installation
 
 = Why was this plugin created? =
 
-A Careers or Jobs section is a recurring component to most business, startup, and nonprofit website created at Red Bridge Internet. We created this plugin as a reusable, extensabile, quickstart for projects in which a requirement is listingan organizations open jobs and positions. 
+Careers and jobs sections are a recurring component in most business, startup, and nonprofit websites created by Red Bridge Internet. We created this plugin as a reusable, extensible, quickstart for projects in which listing an organization's current open positions are a requirement.
 
 = Why did you release this plugin? =
 
-WordPress has been very very good to us.
+WordPress has been good to us.
 
 == Changelog ==
 

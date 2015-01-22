@@ -2,7 +2,7 @@
 /*
 Plugin Name: Red Bridge Careers
 Plugin URI: https://github.com/ereckers/red-bridge-careers
-Description: Create, manage, and list job openings and positions for your website's Careers and Jobs sections.
+Description: Create, manage, and list job openings and positions for your website's careers and jobs sections.
 Version: 1.0.0
 Author: Ed Reckers (Red Bridge Internet)
 Author URI: http://www.redbridgenet.com
@@ -37,9 +37,13 @@ class RedBridgeCareersPluginInit {
 	 * Initialization, Hooks, and localization
 	 */
 	function init() {
+
+		require_once( plugin_dir_path( __FILE__ ) . "/lib/post-type.php" );
+		require_once( plugin_dir_path( __FILE__ ) . "/lib/taxonomies.php" );
+
 		/*
-		add_action( 'wp_enqueue_scripts', array( $this, 'highlightjs_fwp_enqueue_scripts' ) );
-		add_action( 'wp_head', array( $this, 'highlightjs_fwp_insert_script' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'rb415_enqueue_scripts' ) );
+		add_action( 'wp_head', array( $this, 'rb415_insert_script' ) );
 		self::settings();
 		 */
 	}
@@ -50,29 +54,29 @@ class RedBridgeCareersPluginInit {
 	function settings() {
 		// Create array of default settings
 		$this->defaultsettings = array(
-			'color_scheme'    => 'default.css',
+			'plugin_prefix' => 'rb415',
 			'custom_selector' => 'pre'
 		);
 
 		// Create the settings array by merging the user's settings and the defaults
 		/*
-		$usersettings = (array) get_option('highlightjs_fwp_settings');
+		$usersettings = (array) get_option('rb415_careers_settings');
 		$this->settings = wp_parse_args( $usersettings, $this->defaultsettings );
 		*/
 	}
 
 	/**
-	 * Enqueue highlight.js Script and Style site-wide.
+	 * Enqueue scripts and styles site-wide.
 	 */
-	function highlightjs_fwp_enqueue_scripts() {
-		wp_enqueue_style( 'highlightjs', plugins_url( '/highlight/styles/'.$this->settings['color_scheme'], __FILE__ ), array(), '1.0.1' );
-		wp_enqueue_script( 'highlightjs', plugins_url( '/highlight/highlight.pack.js' , __FILE__ ), array(), '1.0.1', 'true' );
+	function rb415_enqueue_scripts() {
+		wp_enqueue_style( 'rb415', plugins_url( '/assets/js/'.$this->settings['color_scheme'], __FILE__ ), array(), '1.0.1' );
+		wp_enqueue_script( 'rb415', plugins_url( '/assets/js/highlight.pack.js' , __FILE__ ), array(), '1.0.1', 'true' );
 	}
 
 	/**
-	 * Hook highlight.js highlighting to the page load event 
+	 * Hook to the page load event 
 	 */
-	function highlightjs_fwp_insert_script() {
+	function rb415_insert_script() {
 		if ( $this->settings['custom_selector'] != "" ) { 
 			include_once( plugin_dir_path( __FILE__ ) . "/templates/initialize-custom.php" );
 		} else {
@@ -82,7 +86,7 @@ class RedBridgeCareersPluginInit {
 
 }
 
-$red_bridge_careers_plugin_init = new RedBridgeCareersPluginInit;
+$rb415_careers_plugin = new RedBridgeCareersPluginInit;
 
 /*
  * Load WordPress options Setting screen
