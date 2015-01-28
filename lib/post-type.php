@@ -37,11 +37,11 @@ $args = array(
 	'show_ui' => true,
 	'show_in_menu' => true,
 	'query_var' => true,
-	'rewrite' => array( 'slug' => 'careers', 'with_front' => false ),
+	'rewrite' => array( 'slug' => 'company/careers', 'with_front' => false ),
 	'capability_type' => 'post',
 	'hierarchical' => false,
 	'has_archive' => false,
-	'menu_position' => '',
+	'menu_position' => '20',
 	'menu_icon' => 'dashicons-businessman',
 	'supports' => array( 'title', 'editor', 'author', 'excerpt', 'page-attributes', 'revisions' ),
 	'taxonomies' => array( '' )

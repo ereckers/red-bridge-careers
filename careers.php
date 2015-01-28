@@ -20,7 +20,7 @@ This plugin, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-class RedBridgeCareersPluginInit {
+class RedBridgeCareersPlugin {
 
 	// to store a reference to the plugin, allows other plugins to remove actions
 	static $instance;
@@ -41,12 +41,12 @@ class RedBridgeCareersPluginInit {
 		self::settings();
 
 		require_once( plugin_dir_path( __FILE__ ) . "/lib/post-type.php" );
-		require_once( plugin_dir_path( __FILE__ ) . "/lib/taxonomies.php" );
+		//require_once( plugin_dir_path( __FILE__ ) . "/lib/taxonomies.php" );
+		require_once( plugin_dir_path( __FILE__ ) . "/lib/shortcode-list-careers.php" );
 
-		/*
+		// TODO: set order above our combined css
 		add_action( 'wp_enqueue_scripts', array( $this, 'rb415_enqueue_scripts' ) );
-		add_action( 'wp_head', array( $this, 'rb415_insert_script' ) );
-		 */
+
 	}
 
 	/**
@@ -55,6 +55,7 @@ class RedBridgeCareersPluginInit {
 	function settings() {
 		// Create array of default settings
 		$this->defaultsettings = array(
+			'version' => '1.0.1',
 			'plugin_prefix' => 'rb415',
 			'cpt_prefix' => 'rb415',
 			'tax_prefix' => 'rb415',
@@ -67,27 +68,15 @@ class RedBridgeCareersPluginInit {
 	}
 
 	/**
-	 * Enqueue scripts and styles site-wide.
+	 * Enqueue scripts and styles
 	 */
 	function rb415_enqueue_scripts() {
-		wp_enqueue_style( 'rb415', plugins_url( '/assets/js/'.$this->settings['color_scheme'], __FILE__ ), array(), '1.0.1' );
-		wp_enqueue_script( 'rb415', plugins_url( '/assets/js/highlight.pack.js' , __FILE__ ), array(), '1.0.1', 'true' );
-	}
-
-	/**
-	 * Hook to the page load event 
-	 */
-	function rb415_insert_script() {
-		if ( $this->settings['custom_selector'] != "" ) { 
-			include_once( plugin_dir_path( __FILE__ ) . "/templates/initialize-custom.php" );
-		} else {
-			include_once( plugin_dir_path( __FILE__ ) . "/templates/initialize.php" );
-		}
+		wp_enqueue_style( 'rb415', plugins_url( '/assets/css/careers.css' , __FILE__ ), array(), $this->settings['version'] );
 	}
 
 }
 
-$rb415_careers_plugin = new RedBridgeCareersPluginInit;
+$rb415_careers_plugin = new RedBridgeCareersPlugin;
 
 /*
  * Load WordPress options Setting screen
@@ -97,5 +86,11 @@ if ( is_admin() ) {
     require_once( 'settings.php' );
 }
 */
+
+/*
+ * TODO
+ *
+ * activate permalinks on activation and or first publish
+ */
 
 ?>

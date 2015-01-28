@@ -1,0 +1,11 @@
+/* Red Bridge Careers */
+
+div.rb415_careers .col-sm-3 h3:first-child {
+	margin-top: 48px;
+}
+body.single-rb415_careers div.single-post {
+	padding-bottom: 65px;
+}
+body.single-rb415_careers #careers-back {
+	margin-top: 50px;
+}
